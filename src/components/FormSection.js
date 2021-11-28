@@ -60,10 +60,10 @@ function FormSection() {
                         <Table className={styled.table} striped bordered hover>
                             <thead>
                                 <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
+                                <th>Sl</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Message</th>
                                 </tr>
                             </thead>
                             <tbody>
