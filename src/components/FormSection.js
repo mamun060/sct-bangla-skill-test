@@ -1,18 +1,16 @@
 import React, { Fragment } from 'react';
-import {Container, Row, Col, Form, Button} from 'react-bootstrap';
+import {Container, Row, Col, Form, Button, Table} from 'react-bootstrap';
 import styled from '../assets/css/FormSection.module.css';
 import Dexie from 'dexie';
 import { useLiveQuery } from "dexie-react-hooks";
 
 
 function FormSection() {
-
         // indexedDB create
         const db = new Dexie('sctBangla');
         db.version(1).stores(
         { items: "++id,name,number,message" }
         )
-
 
         const allItems = useLiveQuery(() => db.items.toArray(), []);
         if (!allItems) return null
@@ -26,6 +24,15 @@ function FormSection() {
             await db.items.add({ name, number, message })
         }
 
+    // get data from local indexedDB
+    const itemData = allItems.map(({ id, name, number, message }) => (
+                <tr>
+                <td>{id}</td>
+                <td>{name}</td>
+                <td>{number}</td>
+                <td>{message}</td>
+                </tr>
+      ))
 
         return (
             <Fragment>
@@ -45,6 +52,25 @@ function FormSection() {
                             <input className="form-control m-2 message" type="text" placeholder="Message"/>
                             <Button id="sendBtn" type="submit" className="btn btn-block m-2 site-btn">Send</Button>
                         </Form>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col xl={12}>
+                        <Table className={styled.table} striped bordered hover>
+                            <thead>
+                                <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {itemData}
+                            </tbody>
+                            </Table>
+                            
                         </Col>
                     </Row>
                 </Container>
