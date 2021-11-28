@@ -1,0 +1,20 @@
+.myContainer {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.onboardForm input {
+    padding: 10px 0;
+}
+
+.onboardForm input::placeholder {
+    padding-left: 20px;
+}
+
+.onboardForm button {
+    padding: 10px 50px;
+}
+
+.LeftImages img {
+    width: 100%;
+}

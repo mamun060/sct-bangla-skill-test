@@ -1,0 +1,12 @@
+.FooterBottom {
+    background-color: #130f40;
+    height: 40px;
+    width: 100%;
+}
+
+.FooterBottom p {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}

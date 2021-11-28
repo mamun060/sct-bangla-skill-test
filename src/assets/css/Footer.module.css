@@ -1,0 +1,30 @@
+.container {
+    background-color: #30336b;
+    width: auto;
+    height: 250px;
+    overflow: hidden;
+}
+
+.footer {
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.footer h4{
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer a{
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.footer a:hover {
+    color: #f0932b;
+    transition: 0.5s ease;
+}
